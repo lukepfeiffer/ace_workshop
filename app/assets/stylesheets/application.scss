@@ -1,0 +1,159 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+@import "bourbon";
+@import "home";
+@import "users";
+@import "neat";
+@import "base/base";
+ */
+#main{
+  $font: "Varela Round", sans-serif;
+  $dark-gray: #111111;
+  $link-font-size: 24px;
+  $soft-gray: #999999;
+  $link-color: #517a9e;
+  $danger-color: #FA3434;
+  $warning-color: #FF9308;
+
+  height: 100%;
+  text-align: center;
+  font-family: $font;
+  margin: 5em;
+  border: 1px solid $soft-gray;
+
+
+  .main-content{
+    margin: 6em 0em;
+  }
+
+  .bold{
+    font-weight: bold;
+  }
+
+  .left{
+    float: left;
+  }
+
+  .right{
+    float: right;
+  }
+
+  .navigation{
+    text-transform: uppercase;
+    color: $dark-gray;
+    .actions{
+      a{
+        margin: 0;
+        text-decoration: none;
+        margin: 5px 10px;
+        padding: 0 0 5px 0;
+        color: $soft-gray;
+        font-size: $link-font-size;
+        font-weight: 400;
+        &:hover{
+          color: $dark-gray;
+          border-bottom: 1px solid $soft-gray;
+        }
+      }
+    }
+  }
+
+  .pagination{
+    $background-color: #D7DEF0;
+    $font-color: #4D4D4D;
+    padding-top: 1em;
+    text-align: center;
+    margin: 0 0 30px 0;
+    a, .previous_page, .next_page, em{
+      background-color: $background-color;
+      text-decoration: none;
+      color: $font-color;
+      padding: 10px;
+      border-radius: 4px;
+      &:hover{
+        background-color: darken($background-color, 8%);
+      }
+    }
+
+    em, .disabled{
+      background-color: darken($background-color, 10%);
+    }
+  }
+
+  h1{
+    font-size: 28px;
+    font-weight: 200;
+    a{
+      text-decoration: none;
+      color: $dark-gray;
+      &:hover{
+        color: lighten($dark-gray, 20%);
+      }
+    }
+  }
+
+  .footer {
+    height: 100%;
+    padding-bottom: 5em;
+    .links {
+      .social {
+        padding: 1em 0;
+        width: 98%;
+        margin: 0 1em;
+        float: left;
+        border-top: 1px solid $soft-gray;
+        border-bottom: 1px solid $soft-gray;
+
+        li {
+          list-style-type: none;
+          float: left;
+          font-size: 1.4em;
+          padding-right: 0.7em;
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+
+        img {
+          height: 1.6em;
+          opacity: 0.7;
+          padding: 1px;
+
+          &:focus, &:hover {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  #workshops{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    .header{
+      border-bottom: 1px solid $soft-gray;
+      margin-bottom: 0;
+    }
+    h1{
+      margin-left: 1em;
+    }
+    h2{
+      font-weight: 200;
+    }
+  }
+
+}

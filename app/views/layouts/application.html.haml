@@ -1,0 +1,26 @@
+%head
+  %title AceWorkshop
+  = csrf_meta_tags
+  = stylesheet_link_tag    'application', media: 'all'
+  = javascript_include_tag 'application'
+  = google_webfonts_init({              |
+      google: ['Varela Round', 'serif'] |
+    })                                  |
+
+%body#main
+  .main-content
+    %nav.navigation
+      %h1= link_to 'ACE Workshops', root_path
+      .actions
+        = link_to 'Home', root_path
+        = link_to 'About', root_path
+        = link_to 'Contact', root_path
+        -# = link_to 'Sign out', sign_out_path, method: :delete if current_user.present?
+
+    = yield
+
+    %nav.footer{role: 'contentinfo'}
+      .links
+        .social
+          %li= link_to(image_tag('twitter.png', alt: 'twitter'), 'https://www.twitter.com/lukerpfeiffer', target: '_blank')
+          %li= link_to(image_tag('facebook.png', alt: 'facebook'), 'https://www.facebook.com/luke.pfeiffer.7', target: '_blank')
