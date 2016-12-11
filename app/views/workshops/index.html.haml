@@ -3,8 +3,13 @@
     %h1 Workshops
 
   %h2
-    .title Command Line
-    .published 11/29/17
+    %span.title Command Line
+    %span.published 11/29/17
 
-  %p Powerpoint: https://www.powerpoint.com
-  %p.show-notes
+  %p
+    %span.show-notes= string.html_safe
+    %span.more= link_to 'Read more', workshops_path
+
+  %p
+    %span.bold Author:
+    %span.creator.italic Luke Pfeiffer

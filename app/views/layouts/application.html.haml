@@ -10,12 +10,13 @@
 %body#main
   .main-content
     %nav.navigation
-      %h1= link_to 'ACE Workshops', root_path
+      .header-image= link_to((image_tag 'gatorace.png'), "https://gatorace.org", target: '_blank')
       .actions
         = link_to 'Home', root_path
         = link_to 'About', root_path
         = link_to 'Contact', root_path
         -# = link_to 'Sign out', sign_out_path, method: :delete if current_user.present?
+      %h1= link_to 'ACE Workshops', root_path
 
     = yield
 
