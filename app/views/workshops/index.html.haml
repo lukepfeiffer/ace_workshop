@@ -1,15 +1,20 @@
 #workshops
+
+  - if current_user.present?
+    .add= link_to 'Add Workshop', new_workshop_path
+
   .header
     %h1.blue Workshops
 
-  %h2
-    %span.title Command Line
-    %span.published 11/29/17
+  - workshops.each do |workshop|
+    %h2
+      %span.title= workshop.title
+      %span.published= workshop.publish_date
 
-  %p
-    %span.show-notes= string.html_safe
-    %span.more= link_to 'Read more', workshops_path
+    %p
+      %span.show-notes= workshop.show_notes.html_safe
+      %span.more= link_to 'Read more', workshop_path(workshop.id)
 
-  %p
-    %span.bold Author:
-    %span.creator.italic Luke Pfeiffer
+    %p
+      %span.bold Author:
+      %span.creator.italic= workshop.publisher

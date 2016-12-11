@@ -235,6 +235,22 @@
       border-bottom: 1px solid $soft-gray;
       margin-bottom: 0;
     }
+
+    .add{
+      text-align: center;
+    }
+    .add a{
+      font-size: 19px;
+      background-color: lighten($gator-blue, 5%);
+      color: #fff;
+      padding: 4px 10px;
+      text-decoration: none;
+      &:hover{
+        background-color: darken($gator-blue, 8%);
+        text-decoration: none;
+      }
+    }
+
     h1{
       margin-left: 0;
     }
