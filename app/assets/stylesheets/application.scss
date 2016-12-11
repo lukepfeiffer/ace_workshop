@@ -26,13 +26,22 @@
   $gator-blue: #00529b;
   $danger-color: #FA3434;
   $warning-color: #FF9308;
+  $body-size: 60%;
 
   height: 100%;
   text-align: center;
   font-family: $font;
   margin-left: 0;
   margin-right: 0;
+  background-color: darken(#fff, 1%);
 
+  .orange{
+    color: $gator-orange;
+  }
+
+  .blue{
+    color: $gator-blue;
+  }
 
   .main-content{
     margin: 2em 0em;
@@ -57,6 +66,25 @@
 
   .right{
     float: right;
+  }
+
+  .page-content{
+    margin-left: auto;
+    margin-right: auto;
+    width: $body-size;
+    background-color: #fff;
+  }
+
+  .special{
+    margin-right: auto;
+    margin-left: auto;
+
+    #main-header{
+      background-color: #fff;
+      margin: 0;
+      padding: 1em;
+      text-decoration: underline;
+    }
   }
 
   .navigation{
@@ -153,9 +181,6 @@
   }
 
   #workshops{
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
     text-align: left;
     .header{
       border-bottom: 1px solid $soft-gray;
@@ -167,6 +192,13 @@
     h2{
       font-weight: 200;
     }
+    .more a{
+      color: $gator-blue;
+      font-weight: bold;
+      &:hover{
+        color: darken($gator-blue, 7%);
+      }
+    }
     .published{
       float: right;
     }
@@ -175,8 +207,14 @@
     }
   }
 
+  .page-body{
+    background-color: darken(#fff, 2%);
+    width: 100%;
+  }
+
   #about{
-    width: 60%;
+    margin-top: 0;
+    background-color: #fff;
     text-align: left;
     margin-left: auto;
     margin-right: auto;

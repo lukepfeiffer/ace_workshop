@@ -16,9 +16,11 @@
         = link_to 'About', about_path
         = link_to 'Contact', contact_path
         -# = link_to 'Sign out', sign_out_path, method: :delete if current_user.present?
-      %h1= link_to 'ACE Workshops', root_path
 
-    = yield
+    .page-content
+      .special
+        %h1#main-header= link_to 'ACE Workshops', root_path
+      = yield
 
     %nav.footer{role: 'contentinfo'}
       .links
