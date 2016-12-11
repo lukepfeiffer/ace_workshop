@@ -26,6 +26,8 @@
   $gator-blue: #00529b;
   $danger-color: #FA3434;
   $warning-color: #FF9308;
+  $success-color: #55acee;
+  $primary-color: #2ecc71;
   $body-size: 60%;
 
   height: 100%;
@@ -38,6 +40,10 @@
   .form{
     text-align: left;
 
+    h1{
+      border-bottom: 1px solid $soft-gray;
+    }
+
     fieldset{
       border: none;
     }
@@ -46,20 +52,20 @@
       margin: 1em 0;
     }
 
-    input[type=text], input[type=password]{
+    input[type=text], input[type=password], input[type=date]{
       padding: 10px;
-      width: 50%;
+      width: 100%;
       height: 2em;
       font-size: 18px;
       border-radius: 4px;
     }
 
     textarea{
+      width: 100%;
       line-height: 150%;
       padding: 10px;
       font-size: 18px;
-      width: 50%;
-      height: 15em;
+      height: 80%;
       border-radius: 4px;
     }
 
@@ -76,6 +82,26 @@
         color: darken(#28AADC, 20%);
         border: 1px solid darken(#28AADC, 20%);
       }
+    }
+
+    .inline{
+      width: 100%;
+
+      div{
+        display: inline-block;
+      }
+
+      .first{
+        margin-right: 1em;
+      }
+
+      .form-container{
+        width: 48%;
+        input{
+          width: 100%;
+        }
+      }
+
     }
 
   }
@@ -226,7 +252,7 @@
     }
   }
 
-  #workshops{
+  .workshops{
     text-align: left;
     margin-top: 0;
     margin-left: 1em;
@@ -236,18 +262,55 @@
       margin-bottom: 0;
     }
 
-    .add{
+    .admin-actions{
       text-align: center;
-    }
-    .add a{
-      font-size: 19px;
-      background-color: lighten($gator-blue, 5%);
-      color: #fff;
-      padding: 4px 10px;
-      text-decoration: none;
-      &:hover{
-        background-color: darken($gator-blue, 8%);
+      div{
+        display: inline;
+      }
+      a{
+        font-size: 19px;
+        padding: 4px 10px;
         text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+          background-color: darken(#fff, 3%);
+        }
+      }
+      .add{
+        color: $gator-blue;
+        &:hover{
+          color: darken($gator-blue, 8%);
+        }
+      }
+      .pending{
+        color: $primary-color;
+        &:hover{
+          color: darken($primary-color, 8%);
+        }
+      }
+      .archived{
+        color: $warning-color;
+        &:hover{
+          color: darken($warning-color, 4%);
+          text-decoration: underline;
+        }
+      }
+      .published{
+        float: none;
+        color: darken($success-color, 15%);
+        &:hover{
+         color: darken($success-color, 18%);
+        }
+      }
+    }
+
+    .show-notes{
+      h1{
+        font-size: 18px;
+        color: $gator-blue;
+      }
+      p{
+        margin-left: 1.4em;
       }
     }
 
@@ -269,6 +332,26 @@
     }
     .creator{
       font-weight: 200;
+    }
+    .actions{
+      float: right;
+      a{
+        font-weight: bold;
+        color: #fff;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      .edit{
+        background-color: $warning-color;
+      }
+
+      .danger{
+        background-color: $danger-color;
+      }
     }
   }
 

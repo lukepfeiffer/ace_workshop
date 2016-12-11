@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root to: 'workshops#index'
-  resources :workshops
+  resources :workshops do
+    collection do
+      get 'pending'
+      get 'archived'
+    end
+  end
 
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'

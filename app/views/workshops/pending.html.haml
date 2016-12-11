@@ -1,0 +1,12 @@
+.workshops
+
+  .admin-actions
+    = link_to 'Add Workshop', new_workshop_path, class: 'add'
+    = link_to 'Published', root_path, class: 'published'
+    = link_to 'Pending', pending_workshops_path, class: 'pending'
+    = link_to 'Archived', archived_workshops_path, class: 'archived'
+
+  .header
+    %h1.blue Pending Workshops
+
+  = render partial: 'workshop_container', collection: pending_workshops, as: :record

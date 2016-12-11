@@ -1,0 +1,31 @@
+= form_for workshop do |f|
+  %fieldset
+    %dl
+
+      .inline
+        .form-container.first
+          %dt= f.label :publisher
+          %dd= f.text_field :publisher, placeholder: "John Smith"
+
+        .form-container
+          %dt= f.label :powerpoint_link
+          %dd= f.text_field :powerpoint_link, placeholder: 'Google docs powerpoint'
+
+
+      .inline
+        .form-container.first
+          %dt= f.label :publish_date
+          %dd= f.date_field :publish_date
+
+        .form-container
+          %dt= f.label :embed_url, 'Youtube Embedded Url (optional)'
+          %dd= f.text_field :embed_url, placeholder: 'https://youtu.be/rPhIoOKEkRw'
+
+      %dt= f.label :title
+      %dt= f.text_field :title, placeholder: 'Worhshop title'
+
+      %dt= f.label :show_notes
+      %dd= f.text_area :show_notes
+
+  %fieldset.actions
+    = f.submit 'Save post'

@@ -1,0 +1,18 @@
+%h2
+  %span.title= workshop.title
+  - if @archived_link == true
+    %span.published= workshop.publish_date.strftime("%B %-d, %Y" )
+
+%p
+  .show-notes= workshop.show_notes.truncate(400).html_safe
+  %span.more= link_to 'Read more', workshop_path(workshop.id)
+
+%p
+  %span.bold Author:
+  %span.creator.italic= workshop.publisher
+
+  - if current_user.present?
+    %span.actions
+      %span= link_to 'Edit', edit_workshop_path(workshop.id), class: 'edit'
+    - if @archived_link == true
+      %span= link_to 'Archive', workshop_path(workshop.id), method: :delete, confirm: 'Are you sure?', class: 'danger'
