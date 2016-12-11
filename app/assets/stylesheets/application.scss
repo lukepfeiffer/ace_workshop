@@ -22,6 +22,8 @@
   $link-font-size: 24px;
   $soft-gray: #999999;
   $link-color: #517a9e;
+  $gator-orange: #dd661e !default;
+  $gator-blue: #00529b;
   $danger-color: #FA3434;
   $warning-color: #FF9308;
 
@@ -160,7 +162,7 @@
       margin-bottom: 0;
     }
     h1{
-      margin-left: 1em;
+      margin-left: 0;
     }
     h2{
       font-weight: 200;
@@ -170,6 +172,60 @@
     }
     .creator{
       font-weight: 200;
+    }
+  }
+
+  #about{
+    width: 60%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    .content{
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
+    }
+    .header{
+      h1{
+        margin-left: 0;
+        border-bottom: 1px solid $soft-gray;
+      }
+    }
+    .text-block{
+      height: 6.5em;
+      padding: 1em 0.5em;
+      &:hover{
+        background-color: darken(#fff, 6%);
+      }
+
+      .orange{
+        color: $gator-orange;
+        &:hover{
+          color: darken($gator-orange, 7%);
+        }
+      }
+
+      .sub-header{
+        color: $gator-orange;
+        height: 2.8em;
+        float: left;
+        margin-right: 2em;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 25px;
+        width: 4em;
+      }
+      .sub-text{
+        color: $gator-blue;
+        font-size: 18px;
+        line-height: 25px;
+        a{
+          color: $gator-orange;
+          &:hover{
+            color: darken($gator-orange, 10%);
+          }
+        }
+      }
     }
   }
 
