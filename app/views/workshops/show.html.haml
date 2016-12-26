@@ -1,1 +1,23 @@
-%h1 Hey
+.workshops
+  %h2.title= workshop.title
+
+  .subtext
+    %span.bold By:
+    %span.creator.italic= workshop.publisher
+    &bull;
+    = workshop.publish_date.strftime("%B %-d, %Y" )
+    &bull;
+    = link_to 'Powerpoint', workshop.powerpoint_link, target: '_blank'
+  %p
+    Notes
+    .show-notes= (workshop.show_notes).html_safe
+
+  %p
+    %span.bold Author:
+    %span.creator.italic= workshop.publisher
+
+    - if current_user.present?
+      %span.actions
+        %span= link_to 'Edit', edit_workshop_path(workshop.id), class: 'edit'
+      - if @archived_link == true
+        %span= link_to 'Archive', workshop_path(workshop.id), method: :delete, confirm: 'Are you sure?', class: 'danger'

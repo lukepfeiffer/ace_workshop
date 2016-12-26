@@ -154,7 +154,7 @@
       background-color: #fff;
       margin: 0;
       padding: 1em;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 
@@ -304,13 +304,49 @@
       }
     }
 
+    .subtext{
+      color: $soft-gray;
+      font-size: 14px;
+      a{
+        color: $gator-blue;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+
+    .container{
+      border-bottom: 1px solid $gator-orange;
+    }
+
+    .title{
+      color: $gator-blue;
+      margin-bottom: 0;
+    }
+
     .show-notes{
       h1{
-        font-size: 18px;
+        font-size: 1.5vw;
         color: $gator-blue;
       }
+      h2{
+        margin-bottom: 0;
+        font-size: 1.3vw;
+        color: $gator-blue;
+        text-decoration: underline;
+      }
       p{
-        margin-left: 1.4em;
+        margin-top: 0;
+        margin-bottom: 28px;
+      }
+      ul{
+        margin: none;
+        // padding: 0;
+      }
+      li{
+      }
+      p{
+        // margin-left: 1.4em;
       }
     }
 

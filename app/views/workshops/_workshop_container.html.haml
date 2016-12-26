@@ -1,18 +1,21 @@
-%h2
-  %span.title= workshop.title
-  - if @archived_link == true
-    %span.published= workshop.publish_date.strftime("%B %-d, %Y" )
+.container
+  %h2.title= workshop.title
 
-%p
-  .show-notes= workshop.show_notes.truncate(400).html_safe
-  %span.more= link_to 'Read more', workshop_path(workshop.id)
+  .subtext
+    %span.bold By:
+    %span.creator.italic= workshop.publisher
+    &bull;
+    = workshop.publish_date.strftime("%B %-d, %Y" )
+    &bull;
+    = link_to 'Powerpoint', workshop.powerpoint_link, target: '_blank'
+  %p
+    .show-notes= workshop.show_notes.truncate(400).html_safe
+    %span.more= link_to 'Read more', workshop_path(workshop.id)
 
-%p
-  %span.bold Author:
-  %span.creator.italic= workshop.publisher
+  %p
 
-  - if current_user.present?
-    %span.actions
-      %span= link_to 'Edit', edit_workshop_path(workshop.id), class: 'edit'
-    - if @archived_link == true
-      %span= link_to 'Archive', workshop_path(workshop.id), method: :delete, confirm: 'Are you sure?', class: 'danger'
+    - if current_user.present?
+      %span.actions
+        %span= link_to 'Edit', edit_workshop_path(workshop.id), class: 'edit'
+      - if @archived_link == true
+        %span= link_to 'Archive', workshop_path(workshop.id), method: :delete, confirm: 'Are you sure?', class: 'danger'
