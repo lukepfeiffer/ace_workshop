@@ -3,10 +3,7 @@
   = csrf_meta_tags
   = stylesheet_link_tag    'application', media: 'all'
   = javascript_include_tag 'application'
-  = google_webfonts_init({              |
-      google: ['Varela Round', 'serif'] |
-    })                                  |
-
+  %link{href:'https://fonts.googleapis.com/css?family=Varela+Round', rel:'stylesheet', type: 'text/css'}
 %body#main
   .main-content
     %nav.navigation
